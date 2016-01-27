@@ -1,0 +1,24 @@
+services:
+    app.admin.portfolio_category:
+        class: AppBundle\Admin\PortfolioCategoryAdmin
+        arguments: [~, AppBundle\Entity\PortfolioCategory, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: portfolio, label: Categories }
+
+    app.admin.portfolio_client:
+        class: AppBundle\Admin\PortfolioClientAdmin
+        arguments: [~, AppBundle\Entity\PortfolioClient, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: portfolio, label: Clients }
+
+    app.admin.portfolio_image:
+        class: AppBundle\Admin\PortfolioImageAdmin
+        arguments: [~, AppBundle\Entity\PortfolioImage, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: portfolio, label: Images }
+
+    app.admin.portfolio_item:
+        class: AppBundle\Admin\PortfolioItemAdmin
+        arguments: [~, AppBundle\Entity\PortfolioItem, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: portfolio, label: Items }

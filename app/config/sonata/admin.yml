@@ -1,0 +1,11 @@
+sonata_admin:
+    dashboard:
+        groups:
+            portfolio:
+                label: Portfolio
+                icon: '<i class="fa fa-th"></i>'
+                items:
+                    - app.admin.portfolio_category
+                    - app.admin.portfolio_client
+                    - app.admin.portfolio_image
+                    - app.admin.portfolio_item
