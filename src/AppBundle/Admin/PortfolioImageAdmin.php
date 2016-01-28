@@ -51,27 +51,12 @@ class PortfolioImageAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $imageName = "";
-        if($this->getSubject()) {
-            $imageName = $this->getSubject()->getImageName();
-        }
 
-        $fileFieldOptions = array('label'=>'Upload file');
-        if ($imageName) {
-            $container = $this->getConfigurationPool()->getContainer();
-            $cacheManager = $container->get('liip_imagine.cache.manager');
-
-            $helper = $container->get('vich_uploader.templating.helper.uploader_helper');
-            $path = $helper->asset($this->getSubject(), 'imageFile');
-
-            $srcPath = $cacheManager->getBrowserPath($path, 'preview_thumb');
-            $fileFieldOptions['help'] = '<img src="'.$srcPath.'" class="admin-preview" />';
-        }
 
         $formMapper
-            ->add('imageName')
-            ->add('imageFile', 'file', $fileFieldOptions)
-            ->add('position', null, array('required' => false));
+            ->add('imageName', 'imagepreview', array('label'=>'Image Preview', 'required' => false))
+            ->add('imageFile', 'file', array('label'=>'Upload file', 'required' => false))
+            ->add('position', null, array('required' => false))
         ;
     }
 

@@ -38,6 +38,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - 'AppBundle:Form:fields.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -81,11 +84,6 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [120, 120], mode: outbound }
-
-        portfolio_thumb:
-            quality: 75
-            filters:
-                thumbnail: { size: [120, 90], mode: outbound }
 
         portfolio_medium:
             quality: 75

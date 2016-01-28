@@ -1,4 +1,12 @@
 services:
+
+    app.form.type.imagepreview:
+        class: AppBundle\Form\Type\ImagePreviewType
+        calls:
+            - [setContainer, ['@service_container']]
+        tags:
+            - { name: form.type, alias: imagepreview }
+
     app.admin.portfolio_category:
         class: AppBundle\Admin\PortfolioCategoryAdmin
         arguments: [~, AppBundle\Entity\PortfolioCategory, SonataAdminBundle:CRUD]

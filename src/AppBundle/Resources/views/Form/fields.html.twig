@@ -1,0 +1,8 @@
+{% block imagepreview_widget %}
+    {{ form_rest(form) }}
+    {% if imageSrc is null or imageSrc == '' %}
+        No picture set
+    {% else %}
+        <a href="{{ imageSrc }}" target="_blank"><img src="{{ imageThumb }} "/></a>
+    {% endif %}
+{% endblock imagepreview_widget %}

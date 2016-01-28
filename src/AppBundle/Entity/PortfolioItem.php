@@ -59,8 +59,9 @@ class PortfolioItem
 
     /**
      * @var Collection
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PortfolioImage", mappedBy="portfolioItem", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PortfolioImage", mappedBy="portfolioItem", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"position" = "ASC"})
+     * @Assert\Count(min=1, minMessage="At least one image is required")
      */
     private $images;
 
