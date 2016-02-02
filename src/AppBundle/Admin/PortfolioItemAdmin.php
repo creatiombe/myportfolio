@@ -32,7 +32,7 @@ class PortfolioItemAdmin extends Admin
         $listMapper
             ->add('id')
             ->add('name')
-            ->add('description')
+            ->add('description', 'html')
             ->add('createdAt')
             ->add('updatedAt')
             ->add('_action', 'actions', array(

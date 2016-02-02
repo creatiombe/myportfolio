@@ -4,13 +4,14 @@ namespace AppBundle\Entity;
 use AppBundle\AppBundle;
 use AppBundle\Entity\Client;
 use AppBundle\Entity\PortfolioImage;
+use AppBundle\Repository\PortfolioItemRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PortfolioItemRepository")
  * @ORM\Table(name="portfolio_items")
  * @ORM\HasLifecycleCallbacks()
  */

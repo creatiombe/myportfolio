@@ -6,3 +6,7 @@
         <a href="{{ imageSrc }}" target="_blank"><img src="{{ imageThumb }} "/></a>
     {% endif %}
 {% endblock imagepreview_widget %}
+
+{% block rawstring_widget %}
+    {{ value }}|raw
+{% endblock rawstring_widget %}

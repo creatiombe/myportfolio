@@ -30,3 +30,15 @@ services:
         arguments: [~, AppBundle\Entity\PortfolioItem, SonataAdminBundle:CRUD]
         tags:
             - { name: sonata.admin, manager_type: orm, group: portfolio, label: Items }
+
+    app.portfolio_item.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments:
+            - AppBundle\Entity\PortfolioItem
+
+    app.portfolio_item.service:
+        class: AppBundle\Services\PortfolioItemService
+        arguments:
+            - "@app.portfolio_item.repository"
